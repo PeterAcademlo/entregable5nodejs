@@ -1,10 +1,10 @@
 const request = require("supertest")
-const app = require ("../app")
+const app = require("../app")
 
 const BASE_URL_USERS = '/api/v1/users/login'
 const BASE_URL = '/api/v1/categories'
 let TOKEN
-
+let categoryId
 
 beforeAll(async()=>{
     const user = {
@@ -44,6 +44,7 @@ test("GET -> 'BASE_URL', should return status code 200 and res.body.length === 1
     expect(res.status).toBe(200)
     expect(res.body).toHaveLength(1)
 })
+
 
 test("DELETE -> 'BASE_URL', should return status code 204",async()=>{
    
