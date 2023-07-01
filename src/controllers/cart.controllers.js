@@ -24,7 +24,13 @@ const create = catchError(async(req, res) => {
 
 const remove = catchError(async(req, res) => {
     const { id } = req.params;
-    await Cart.destroy({ where: {id} });
+    const userId = req.user.id
+    await Cart.destroy({ 
+        where: {
+            id,userId
+        } 
+    });
+
     return res.sendStatus(204);
 });
 

@@ -50,14 +50,14 @@ test("POST -> 'BASE_URL' should status code 201 and res.body.title === body.titl
 })
 
 
-test("GET -> 'BASE_URL_PRODUCTS' should status code 200 and res.body.length === 1",async()=>{
+test("GET -> 'BASE_URL_PRODUCTS' should status code 200, res.body.length === 1 and res.body[0] to be defined",async()=>{
  
     const res = await request(app)
         .get(BASE_URL_PRODUCTS)
           
     expect(res.status).toBe(200)
     expect(res.body).toHaveLength(1)
-    expect(res.body[0]).toBeDefined()
+    expect(res.body[0].category).toBeDefined()
 })
 
 test("GET -> 'BASE_URL_PRODUCTS?category = category.id' should status code 200, res.body.length === 1 and res.body[0] to be defined",async()=>{

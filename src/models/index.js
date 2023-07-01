@@ -2,6 +2,7 @@ const Product =require("./Product")
 const Category =require("./Category")
 const Cart = require("./Cart")
 const User = require("./User")
+const Purchase = require("./Purchase")
 
 
 //Product -> //categoryId
@@ -15,3 +16,11 @@ User.hasOne(Cart)
 //Cart -> //productId
 Cart.belongsTo(Product)
 Product.hasMany(Cart)
+
+//Purchase -> //productId
+Purchase.belongsTo(Product)
+Product.hasMany(Purchase)
+
+//Purchase -> //userId
+Purchase.belongsTo(User)
+User.hasMany(Purchase)
