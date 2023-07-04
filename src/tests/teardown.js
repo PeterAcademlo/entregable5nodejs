@@ -3,7 +3,7 @@ require("../models")
 
 const main = async() => {
     try{
-        await sequelize.sync({forse: true});
+        await sequelize.sync({force: true});
         await sequelize.close()
         console.log('database reset successful xdd');
     } catch(error){

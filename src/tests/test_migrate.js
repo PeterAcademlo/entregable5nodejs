@@ -4,7 +4,7 @@ require("../models")
 
 const main = async() => {
     try{
-        await sequelize.sync();
+        await sequelize.sync({force:true});
         await user()
         console.log('me ejecute xdd');
         process.exit();
