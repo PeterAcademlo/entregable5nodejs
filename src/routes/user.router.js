@@ -15,5 +15,4 @@ routerUser.route('/:id')
     .delete(verifyJWT,remove)
     .put(verifyJWT,update);
 
-
 module.exports = routerUser;

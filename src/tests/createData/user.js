@@ -9,6 +9,7 @@ const user = async()=> {
             password: "CAPILLITO",
             phone: "996703615"
     }
+    
     await User.create(userCreate)
 }
 

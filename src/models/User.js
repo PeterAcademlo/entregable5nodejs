@@ -40,4 +40,3 @@ User.beforeCreate(async(user)=>{
 
 module.exports = User;
 
-

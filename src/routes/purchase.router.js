@@ -8,4 +8,5 @@ routerPurchase.route('/')
     .get(verifyJWT,getAll)
     .post(verifyJWT,create);
 
+    
 module.exports = routerPurchase;
